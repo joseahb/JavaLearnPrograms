@@ -8,15 +8,14 @@ public class FibonacciRecursive {
         this.prev2 = 1;
         this.sum = 0;
         this.count = 10;
-        getFibonacci();
+        getFibonacci(prev1,prev2);
     }
 
-    private void getFibonacci(){
-        System.out.print(prev1+","+prev2);
-
-        for(int i = 0; i < count; i ++) {
-            sum = prev1 + prev2;
-            System.out.print("," + sum);
+    private void getFibonacci(Integer n1, Integer n2){
+        System.out.print(n1+","+n2);
+        while(count < 10) {
+            sum = n1 + n2;
+            getFibonacci(n2, sum);
         }
     }
 
